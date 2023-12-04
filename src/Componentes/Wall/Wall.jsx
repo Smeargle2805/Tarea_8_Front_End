@@ -6,7 +6,7 @@ import '../LogIn/login.css'
 export const Wall = () => {
 
     const [posts, setPosts] = useState([]);
-    const urlGetPost = 'http://localhost:4000/api/posts';
+    const urlGetPost = 'http://localhost:3000/api/posts';
 
     const getDataPost = async () => {
 

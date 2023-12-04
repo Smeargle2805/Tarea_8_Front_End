@@ -7,7 +7,7 @@ export const Posts = ( {infoUsuario}  ) => {
 
     const navigate = useNavigate();
 
-    const url  = 'http://localhost:4000/api/posts';
+    const url  = 'http://localhost:3000/api/posts';
 
     const [imagen, setImagen] = useState();
 
@@ -41,10 +41,10 @@ export const Posts = ( {infoUsuario}  ) => {
         dataSend.append( "imagen", imagen );
 
         // Fetch por defecto hace request de tipo Form Data
-        /*const response  =  await fetch(url, {
+        const response  =  await fetch(url, {
             method : "POST", 
             body  : dataSend
-        });*/
+        });
 
         
         const result= await axios.post( url, dataSend, { withCredentials : true } );

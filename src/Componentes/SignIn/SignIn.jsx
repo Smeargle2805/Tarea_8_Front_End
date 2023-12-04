@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios  from 'axios'
 
-const url = 'http://localhost:4000/api/users';
+const url = 'http://localhost:3000/api/users';
 
 export const SignIn = () => {
 
@@ -33,8 +33,6 @@ export const SignIn = () => {
 
         event.preventDefault();    
         
-        /*
-        Enviar datos con fetch
         fetch(url, {
             method : 'POST', 
             headers : {
@@ -55,7 +53,7 @@ export const SignIn = () => {
 
             console.log(err.message);
 
-        })*/
+        })
 
         const result = await axios.post(url, formData);
         const data = (await result).data;

@@ -6,7 +6,7 @@ import axios from 'axios'
 
 export const LogIn = ( {prop1} ) => {
 
-  const url = `http://localhost:4000/api/auth`
+  const url = `http://localhost:3000/api/auth`
 
   const navigate = useNavigate();
 
