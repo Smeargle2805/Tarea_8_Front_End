@@ -17,7 +17,7 @@ function App() {
 
   const validarCookie = async ( )=>{
 
-    const ulrValidar = 'http://localhost:4000/api/auth'
+    const ulrValidar = 'http://localhost:3000/api/auth'
     const result = await axios.get(ulrValidar,  { withCredentials:true} );
     const resultData = (await result).data;
 
