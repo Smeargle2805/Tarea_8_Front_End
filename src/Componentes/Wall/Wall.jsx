@@ -37,7 +37,6 @@ export const Wall = () => {
 
                             <li className='ulPosts'  key={x.id} >
                                 <div className="card mb-3" >
-                                    <img src={`data:image/png;base64,${x.img_base64}`} className="card-img-top" alt='Foto de Post' />
                                     <div className="card-body">
                                         <p className="card-text">{x.description}</p>
                                     </div>
