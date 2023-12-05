@@ -1,4 +1,4 @@
-import '../LogIn/login.css';
+import '../Posts/Posts.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -30,13 +30,6 @@ export const Posts = ( {infoUsuario}  ) => {
         const dataSend = new FormData();
         dataSend.append( "user_name", datoFormulario.user_name);
         dataSend.append( "description", datoFormulario.description);
-
-        // Fetch por defecto hace request de tipo Form Data
-        const response  =  await fetch(url, {
-            method : "POST", 
-            body  : dataSend
-        });
-
         
         const result= await axios.post( url, dataSend, { withCredentials : true } );
         const resultData = (await result).data;
@@ -48,11 +41,11 @@ export const Posts = ( {infoUsuario}  ) => {
 
     return (
         <>
-            <div className='container' >
+            <div className='container' id='post' >
 
 
                 <form onSubmit={onSubmit} className='mt-5 formInicioSesion'>
-
+                    <h2 className="mb-4">Crear Post</h2>
                     <div className="form-floating mb-3">
                         <input type='text' className="form-control" disabled = {true} name="user_name" value = {infoUsuario.user_name} />
                         <label >Usuario</label>
@@ -63,7 +56,7 @@ export const Posts = ( {infoUsuario}  ) => {
                         <label >Descripcion</label>
                     </div>
 
-                    <button className='btn btn-primary w-100' >Crear</button>
+                    <button className='btn btn-primary w-100' >Publicar</button>
 
 
                 </form>

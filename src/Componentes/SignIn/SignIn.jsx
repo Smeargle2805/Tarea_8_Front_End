@@ -2,7 +2,7 @@ import React from 'react'
 import '../LogIn/login.css'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import axios  from 'axios'
+import axios from 'axios'
 
 const url = 'http://localhost:3000/api/users';
 
@@ -17,43 +17,18 @@ export const SignIn = () => {
 
     });
 
-
-
-
     const onHandleChange = (event) => {
 
         const { name, value } = event.target;
-        setFormData({...formData, [name] : value});
+        setFormData({ ...formData, [name]: value });
 
         // Enviar los datos con Fetch
 
     };
 
-    const handleSubmit = async (event)=>{
+    const handleSubmit = async (event) => {
 
-        event.preventDefault();    
-        
-        fetch(url, {
-            method : 'POST', 
-            headers : {
-                'Content-Type' : 'application/json'
-            }, 
-            body : JSON.stringify(formData)
-        })
-        .then(  (response)=>{
-
-            console.log(response);
-            return response.json();
-        })
-        .then(data => {
-            // Hacer algo con los datos de la respuesta (si es necesario)
-            console.log('Response data:', data);
-          })
-        .catch( (err) => {
-
-            console.log(err.message);
-
-        })
+        event.preventDefault();
 
         const result = await axios.post(url, formData);
         const data = (await result).data;
@@ -61,7 +36,6 @@ export const SignIn = () => {
         console.log(data);
 
     }
-
 
     const navigate = useNavigate();
 
@@ -76,9 +50,10 @@ export const SignIn = () => {
 
             <div className='container' >
 
-                <form className='mt-5 formInicioSesion'  onSubmit={handleSubmit} >
+                <form className='mt-5 p-4 border rounded shadow-sm bg-light text-center' onSubmit={handleSubmit}>
+                    <h2 className="mb-3">Registrarse</h2>
                     <div className="form-floating mb-3">
-                        <input  type='email' className="form-control" name="email" onChange={onHandleChange} />
+                        <input type='email' className="form-control" name="email" onChange={onHandleChange} />
                         <label >Correo Electronico</label>
                     </div>
 
@@ -93,15 +68,14 @@ export const SignIn = () => {
                         <label >Contraseña</label>
                     </div>
 
-                    <button className='btn btn-primary w-100' >Registrarse</button>
+                    <button className='btn btn-primary w-100' >Registrar</button>
+
+                    <div className='mt-3'>
+                        <p className='mb-2'>¿No tienes una cuenta?</p>
+                        <button className='btn btn-outline-primary' onClick={goToIniciarSesion}>Inicia Sesion</button>
+                    </div>
 
                 </form>
-
-
-                <div className='formInicioSesion'>
-                    ¿Tienes una cuenta?
-                    <button className='btn' onClick={goToIniciarSesion} >Inicia Sesion</button>
-                </div>
 
             </div>
 

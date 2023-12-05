@@ -1,12 +1,46 @@
-.formInicioSesion {
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #47a3e0;
+  }
 
-    border: 1px solid #ccc; 
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 50px;
-
-}
-
-.ulPosts {
-    list-style-type: none;
+  #twitter-negro {
+    width: 40px;
+    height: auto;
+  }
+  
+  .formInicioSesion {
+    text-align: center;
+    margin-top: 15px;
+  }
+ 
+  .formInicioSesion form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .formInicioSesion h2 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .formInicioSesion button {
+    margin-top: 1rem;
+  }
+  
+  .formInicioSesion .btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .formInicioSesion .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  @media (max-width: 576px) {
+    .formInicioSesion form {
+      padding: 1rem;
+    }
   }

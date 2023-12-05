@@ -1,0 +1,57 @@
+#navbar{
+    color: white;
+    background-color: black;
+
+}
+
+#muro {
+    background-color: #47a3e0;
+    padding: 20px;
+  }
+  
+  #header {
+    margin-bottom: 20px;
+  }
+  
+  #twitter-logo {
+    width: 50px;
+    height: auto;
+  }
+  
+  #create-post-btn {
+    font-size: 14px;
+  }
+  
+  #posts-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .card-text.description {
+    font-size: 18px;
+  }
+  
+  .card-text-user {
+    font-size: 12px;
+  }
+
+  .card-text-date {
+    font-size: 10px;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  }
+  
+  @media (max-width: 576px) {
+    #muro {
+      padding: 0 15px;
+    }
+  }
